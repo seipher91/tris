@@ -7,4 +7,5 @@ public class Simbolo {
         this.X = "X";
         this.O = "O";
     }
+    
 }
