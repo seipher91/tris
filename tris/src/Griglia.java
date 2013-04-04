@@ -37,6 +37,14 @@ public class Griglia {
             return false;
     }
     
+    public void Clear() {
+        for (int i = 0 ; i < this.righe; i++) {
+            for (int j = 0; j < this.colonne; i++) {
+                this.table[i][j] = null;
+            }
+        }
+    }
+    
     private void checkindex(int pRiga, int pColonna) throws RigheNonValideException, ColonneNonValideException {
         if ((pRiga < 0) || (pRiga >= this.righe))
             throw new RigheNonValideException("Indice colonna non valido");
