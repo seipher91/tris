@@ -5,7 +5,8 @@ public class Griglia {
     private int righe;
     private int colonne;
     
-    private  Simbolo [][] table;
+    private Simbolo [][] table;
+    private player g;
     
     public Griglia() throws RigheNonValideException, ColonneNonValideException {
         this(3,3);
@@ -19,8 +20,8 @@ public class Griglia {
             throw new ColonneNonValideException();
         }
         
-        this.righe = pRighe;
-        this.colonne = pColonne;
+        setRighe(pRighe);               //non ne ho idea s va bene ma mi sembra un 
+        setColonne(pColonne);           //buon modo per avere astrazione funzionale
         this.table = new Simbolo [this.righe][this.colonne];
     }
     
@@ -60,7 +61,28 @@ public class Griglia {
             throw new ColonneNonValideException("Indice colonna non valido");
         }
     }
+    
+    public Simbolo getindex(int pRiga, int pColonna) throws RigheNonValideException, ColonneNonValideException {
+        checkindex(pRiga,pColonna);
+        if (this.table[pRiga][pColonna] == this.g.setO())
+    }
+    
+    public int getRighe() {
+        return righe;
+    }
 
+    private void setRighe(int pRighe) {
+        this.righe = pRighe;
+    }
+
+    public int getColonne() {
+        return colonne;
+    }
+
+    private void setColonne(int pColonne) {
+        this.colonne = pColonne;
+    }
+    
     @Override
     public String toString() {
         String toString = "";
