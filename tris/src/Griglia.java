@@ -64,7 +64,11 @@ public class Griglia {
     @Override
     public String toString() {
         String toString = "";
-        
+        for (int i = 0 ; i < this.righe; i++) {
+            for (int j = 0; j < this.colonne; i++) {
+                toString = this.table[i][j].toString() + "|";
+            }
+        }
         return toString;
     }
     
