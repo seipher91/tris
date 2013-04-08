@@ -7,6 +7,7 @@ public class player {
     public player() {
         
     }
+    //
     /*
     public boolean isFree() {
         if (this.simbol.);
